@@ -1,26 +1,16 @@
 # Makefile-Generator
 
-After using C with Emacs during my systems class, a couple of friends and I
-thought that creating a simple Makefile generator would be a fun little side
-project to get done over the summer.
+IMPORTANT NOTE: For those of you who see this code, just note that I will
+be rewriting the entire thing in Ruby at some point in the near future. Besides
+using Ruby, the main change will be the data structure I use. Instead of the
+weird linked-list structure, I'll be using a hashmap with the keys being the
+names of the C sources files and the values being sets of file dependencies.
 
-To use the program, the user must type in the names of the source files they
-want to compile in the command line while calling generator.exe. The program
-then asks them for the name of the executable and the cflags that the user
-wishs to include.
+Program that takes C source files in the command line and prints out a Makefile
+for them. Example program call: "generator hello.c goodbye.c"
 
-The program then goes through these source files and creates a rule for each.
-These rules contain the target for the rule as well as a linked list of
-dependencies. After creating the rule the program then goes in and looks through
-the lines of the source files looking for these dependencies. It then goes
-into the dependencies looking to see if they have any dependencies to account
-for. Once the dependencies are all accounted for, the rules are printed out
-in a proper Makefile format.
+The user also has the option to use their own cflags.
 
-The example Makefile included in this Repo shows an example of two different
-source files being used, as well as headers that also rely on other headers
-not included in the original source files.
-
-The program will spit out errors if the user doesn't input a .c file into the
-command line, or if one of the source files or dependencies doesn't exist in the
-current directory.
+Once all of the input has been received from the user, the program will looks
+line by line through the source files for dependencies, and will then do the
+same for the dependencies themselves.
