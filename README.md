@@ -1,10 +1,6 @@
 # Makefile-Generator
 
-IMPORTANT NOTE: For those of you who see this code, just note that I will
-be rewriting the entire thing in Ruby at some point in the near future. Besides
-using Ruby, the main change will be the data structure I use. Instead of the
-weird linked-list structure, I'll be using a hashmap with the keys being the
-names of the C sources files and the values being sets of file dependencies.
+CAUTION: UGLY CODE AHEAD, VIEW AT OWN PERIL
 
 Program that takes C source files in the command line and prints out a Makefile
 for them. Example program call: "generator hello.c goodbye.c"
