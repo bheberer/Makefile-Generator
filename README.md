@@ -1,7 +1,5 @@
 # Makefile-Generator
 
-CAUTION: UGLY CODE AHEAD, VIEW AT OWN PERIL
-
 Program that takes C source files in the command line and prints out a Makefile
 for them. Example program call: "generator hello.c goodbye.c"
 
